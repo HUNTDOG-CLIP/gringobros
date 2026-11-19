@@ -33,7 +33,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+.slide { scroll-margin-top: 0; }
+#inicio { min-height: calc(100svh - 46px); display: flex; align-items: center; }
 body {
   margin: 0;
   font-family: var(--body);
@@ -313,11 +315,12 @@ button { font: inherit; cursor: pointer; }
 .foot { position: relative; text-align: center; font-weight: 700; font-size: 14px; margin-top: 40px; }
 
 /* ---------- Cinta + navegación ---------- */
-.ticker { position: relative; background: var(--ink); color: var(--orange); overflow: hidden; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.ticker { position: relative; z-index: 2; background: var(--ink); color: var(--orange); overflow: hidden; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
 .ticker__track { display: flex; width: max-content; gap: 22px; padding: 12px 0; animation: marquee 32s linear infinite; font-family: var(--display); font-weight: 800; font-size: 16px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
 .ticker__track i { font-style: normal; color: var(--white); }
+.reveal { opacity: 0; translate: 0 28px; transition: opacity .7s ease, translate .7s ease, transform .2s; }
+.reveal.is-in { opacity: 1; translate: 0 0; }
 @keyframes marquee { to { transform: translateX(-50%); } }
-.navbar { display: none; }
 
 .wa-float {
   position: fixed; right: 18px; bottom: 18px; z-index: 60;
@@ -327,44 +330,6 @@ button { font: inherit; cursor: pointer; }
 }
 .wa-float:hover { transform: scale(1.06) rotate(-6deg); }
 .wa-float svg { width: 32px; height: 32px; fill: var(--ink); }
-
-/* =========================================================
-   MODO SLIDESHOW (pantallas grandes) — inspirado en la referencia
-   ========================================================= */
-html.is-slides, html.is-slides body { height: 100%; overflow: hidden; }
-html.is-slides .deck {
-  position: fixed; inset: 0; display: flex; height: 100dvh;
-  transition: transform .8s cubic-bezier(.7, 0, .2, 1);
-  will-change: transform;
-}
-html.is-slides .slide {
-  flex: 0 0 100vw; width: 100vw; height: 100dvh;
-  padding: calc(var(--top) + 28px) var(--gutter) calc(var(--bottom) + 24px);
-  overflow-y: auto; overflow-x: hidden;
-  display: flex; flex-direction: column;
-  scrollbar-width: thin;
-}
-html.is-slides .slide__in { margin: auto; }
-html.is-slides .foot { margin-top: 24px; }
-html.is-slides .ticker { position: fixed; left: 0; right: 0; bottom: 50px; z-index: 40; }
-html.is-slides .navbar {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; height: 50px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 var(--gutter); background: var(--cream); border-top: 2px solid var(--ink);
-}
-html.is-slides .wa-float { bottom: calc(var(--bottom) + 16px); }
-.navbar__label { font-family: var(--display); font-weight: 800; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
-.navbar__arrows { display: flex; gap: 10px; }
-.arrow { width: 38px; height: 34px; border: 2px solid var(--ink); background: var(--white); border-radius: 8px; font-weight: 800; font-size: 18px; box-shadow: 2px 2px 0 var(--ink); }
-.arrow:hover { background: var(--orange); }
-.arrow:disabled { opacity: .35; cursor: default; background: var(--white); }
-
-/* Animación de entrada de cada slide */
-html.is-slides .slide .slide__in > * { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-html.is-slides .slide.is-active .slide__in > * { opacity: 1; transform: none; }
-html.is-slides .slide.is-active .slide__in > *:nth-child(2) { transition-delay: .12s; }
-html.is-slides .slide.is-active .slide__in > *:nth-child(3) { transition-delay: .24s; }
-html.is-slides .slide.is-active .slide__in > *:nth-child(4) { transition-delay: .36s; }
 
 /* =========================================================
    RESPONSIVE (modo scroll vertical)

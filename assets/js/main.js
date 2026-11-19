@@ -28,120 +28,58 @@ document.querySelectorAll("[data-price]").forEach((el) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ---------- Slideshow / scroll ---------- */
-const html = document.documentElement;
-const deck = document.getElementById("deck");
-const slides = [...deck.querySelectorAll(".slide")];
+/* ---------- Scroll: contador, barra de progreso y menú ---------- */
+const slides = [...document.querySelectorAll(".slide")];
 const total = slides.length;
 const pad = (n) => String(n).padStart(2, "0");
 const $cur = document.getElementById("cur");
-const $label = document.getElementById("slideLabel");
 const $bar = document.getElementById("progress");
-const $prev = document.getElementById("prev");
-const $next = document.getElementById("next");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menuBtn");
 const menuLinks = [...menu.querySelectorAll("[data-go]")];
-let index = 0;
 
 document.getElementById("tot").textContent = pad(total);
 
-const mq = window.matchMedia("(min-width: 901px) and (min-height: 600px)");
-const isSlides = () => html.classList.contains("is-slides");
-
-function updateUI(i) {
-  index = i;
+function setActive(i) {
   $cur.textContent = pad(i + 1);
-  $bar.style.width = `${((i + 1) / total) * 100}%`;
-  $label.textContent = slides[i].getAttribute("aria-label");
-  $prev.disabled = i === 0;
-  $next.disabled = i === total - 1;
-  slides.forEach((s, k) => s.classList.toggle("is-active", k === i));
   menuLinks.forEach((a) => a.setAttribute("aria-current", String(+a.dataset.go === i)));
 }
 
-function goTo(i, { push = true } = {}) {
-  i = Math.max(0, Math.min(total - 1, i));
-  if (isSlides()) {
-    deck.style.transform = `translateX(${-i * 100}vw)`;
-    slides[i].scrollTop = 0;
-    updateUI(i);
-  } else {
-    slides[i].scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  if (push) history.replaceState(null, "", `#${slides[i].id}`);
-}
+// Sección visible → contador
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((en) => { if (en.isIntersecting) setActive(slides.indexOf(en.target)); });
+}, { rootMargin: "-45% 0px -50% 0px" });
+slides.forEach((s) => io.observe(s));
 
-function applyMode() {
-  const want = mq.matches;
-  html.classList.toggle("is-slides", want);
-  if (want) {
-    deck.style.transition = "none";
-    deck.style.transform = `translateX(${-index * 100}vw)`;
-    requestAnimationFrame(() => (deck.style.transition = ""));
-  } else {
-    deck.style.transform = "";
-  }
-  updateUI(index);
+// Barra de progreso según el scroll
+function onScroll() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  $bar.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
 }
+addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-// Links internos (menú, botones "Ver cursos", logo)
+// Links internos
 document.querySelectorAll("[data-go]").forEach((a) =>
   a.addEventListener("click", (e) => {
     e.preventDefault();
     closeMenu();
-    goTo(+a.dataset.go);
+    const target = slides[+a.dataset.go];
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", `#${target.id}`);
   })
 );
 
-$prev.addEventListener("click", () => goTo(index - 1));
-$next.addEventListener("click", () => goTo(index + 1));
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") return closeMenu();
-  if (!isSlides() || !menu.hidden) return;
-  if (["INPUT", "TEXTAREA", "SUMMARY"].includes(document.activeElement?.tagName)) return;
-  if (e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); goTo(index + 1); }
-  if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); goTo(index - 1); }
-});
-
-// Swipe horizontal (tablets en modo slides)
-let tx = 0, ty = 0;
-deck.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
-deck.addEventListener("touchend", (e) => {
-  if (!isSlides()) return;
-  const dx = e.changedTouches[0].clientX - tx;
-  const dy = e.changedTouches[0].clientY - ty;
-  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) goTo(index + (dx < 0 ? 1 : -1));
-}, { passive: true });
-
-// Rueda horizontal del trackpad
-let wheelLock = false;
-deck.addEventListener("wheel", (e) => {
-  if (!isSlides() || wheelLock) return;
-  if (Math.abs(e.deltaX) > 40 && Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-    wheelLock = true;
-    goTo(index + (e.deltaX > 0 ? 1 : -1));
-    setTimeout(() => (wheelLock = false), 900);
-  }
-}, { passive: true });
-
-// En modo scroll, el contador sigue la sección visible
-const io = new IntersectionObserver((entries) => {
-  if (isSlides()) return;
-  entries.forEach((en) => { if (en.isIntersecting) updateUI(slides.indexOf(en.target)); });
-}, { rootMargin: "-45% 0px -50% 0px" });
-slides.forEach((s) => io.observe(s));
+// Animación de entrada al hacer scroll
+const revealEls = document.querySelectorAll(".slide__in > *, .modes li, .plan, .steps li, .quote, .member");
+revealEls.forEach((el) => el.classList.add("reveal"));
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); ro.unobserve(en.target); } });
+}, { rootMargin: "0px 0px -8% 0px" });
+revealEls.forEach((el) => ro.observe(el));
 
 /* ---------- Menú ---------- */
 function openMenu() { menu.hidden = false; menuBtn.setAttribute("aria-expanded", "true"); menu.querySelector("a").focus(); }
 function closeMenu() { if (menu.hidden) return; menu.hidden = true; menuBtn.setAttribute("aria-expanded", "false"); }
 menuBtn.addEventListener("click", () => (menu.hidden ? openMenu() : closeMenu()));
-
-/* ---------- Inicio ---------- */
-const fromHash = slides.findIndex((s) => `#${s.id}` === location.hash);
-index = fromHash > 0 ? fromHash : 0;
-applyMode();
-mq.addEventListener("change", applyMode);
-window.addEventListener("resize", () => { if (isSlides()) { deck.style.transition = "none"; deck.style.transform = `translateX(${-index * 100}vw)`; requestAnimationFrame(() => (deck.style.transition = "")); } });
-if (!isSlides() && fromHash > 0) slides[fromHash].scrollIntoView();
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
