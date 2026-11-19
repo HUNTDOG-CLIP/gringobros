@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gringo Bros · Inglés a tu manera</title>
+  <meta name="description" content="Clases de inglés personalizadas 1 on 1, grupales y preparación TOEFL. Presenciales en Santa Cruz, Bolivia o virtuales por Google Meet. Docentes licenciados con más de 10 años de experiencia.">
+  <meta name="theme-color" content="#EC6B0E">
+  <meta property="og:title" content="Gringo Bros · Inglés a tu manera">
+  <meta property="og:description" content="Clases 1 on 1, grupales y preparación TOEFL. Presencial en Santa Cruz o virtual por Google Meet.">
+  <meta property="og:image" content="assets/img/portada.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ===== Barra superior ===== -->
+<header class="topbar">
+  <a href="#inicio" class="topbar__logo" data-go="0" aria-label="Gringo Bros, ir al inicio">
+    <img src="assets/img/logo.png" alt="Gringo Bros" width="600" height="312">
+  </a>
+  <div class="topbar__right">
+    <span class="counter" aria-live="polite"><b id="cur">01</b> / <span id="tot">09</span></span>
+    <button class="btn-menu" id="menuBtn" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true">+</span></button>
+  </div>
+  <div class="progress"><span id="progress"></span></div>
+</header>
+
+<!-- ===== Menú ===== -->
+<nav class="menu" id="menu" aria-label="Secciones" hidden>
+  <ol class="menu__list">
+    <li><a href="#inicio" data-go="0"><i>01</i> Inicio</a></li>
+    <li><a href="#nosotros" data-go="1"><i>02</i> Nosotros</a></li>
+    <li><a href="#equipo" data-go="2"><i>03</i> Equipo</a></li>
+    <li><a href="#modalidades" data-go="3"><i>04</i> Modalidades</a></li>
+    <li><a href="#cursos" data-go="4"><i>05</i> Cursos</a></li>
+    <li><a href="#toefl" data-go="5"><i>06</i> TOEFL</a></li>
+    <li><a href="#empezar" data-go="6"><i>07</i> Cómo empezar</a></li>
+    <li><a href="#testimonios" data-go="7"><i>08</i> Testimonios</a></li>
+    <li><a href="#contacto" data-go="8"><i>09</i> Contacto</a></li>
+  </ol>
+  <a class="btn btn--wa" data-wa href="#">Escríbenos por WhatsApp</a>
+</nav>
+
+<main class="deck" id="deck">
+
+  <!-- 01 · INICIO -->
+  <section class="slide s-hero" id="inicio" aria-label="Inicio">
+    <div class="slide__in hero">
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--dark">Academia de inglés · Santa Cruz, Bolivia · Online</p>
+        <h1 class="hero__title">
+          <span class="marker">Te ayudamos<br>a abrir esas puertas</span>
+          <small>(que tanto te prometieron)</small>
+        </h1>
+        <p class="hero__lead">Clases de inglés <b>1 on 1</b>, <b>grupales</b> y <b>preparación TOEFL</b>. Presenciales en Santa Cruz o virtuales por Google Meet: <b>llevamos el inglés hasta tu casa.</b></p>
+        <div class="hero__cta">
+          <a class="btn btn--ink" data-wa href="#">Escríbenos por WhatsApp</a>
+          <a class="btn btn--ghost" href="#cursos" data-go="4">Ver cursos</a>
+        </div>
+        <ul class="stats">
+          <li><b>+10</b><span>años enseñando inglés</span></li>
+          <li><b>3</b><span>docentes licenciados</span></li>
+          <li><b>1 on 1</b><span>o en grupo, todos los niveles</span></li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <span class="sticker sticker--ink">TOEFL prep</span>
+        <span class="sticker sticker--white">Clases 1 on 1</span>
+        <img class="hero__logo" src="assets/img/logo-blanco.png" alt="" width="900" height="468">
+        <p class="hero__slogan">Inglés a tu manera</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · NOSOTROS -->
+  <section class="slide s-light" id="nosotros" aria-label="Nosotros">
+    <div class="slide__in split">
+      <div>
+        <p class="eyebrow">02 · Nosotros</p>
+        <h2 class="h2">¿Estudiaste inglés por años y <em>todavía no lo usas</em> con seguridad?</h2>
+        <p class="lead">…¿o todavía no das el primer paso? Somos <b>Gringo Bros</b>: una comunidad de docentes jóvenes, apasionados por la educación, que da un servicio <b>personalizado</b> para que alcances tus metas a través del inglés.</p>
+        <ul class="goals">
+          <li>Mejores propuestas laborales</li>
+          <li>Cierres de negocios exitosos</li>
+          <li>Estudios y becas en el exterior</li>
+          <li>Oportunidades más grandes</li>
+        </ul>
+        <p class="hand">Queremos ser parte de tu equipo.</p>
+      </div>
+      <figure class="photo">
+        <img src="assets/img/portada.jpg" alt="Docentes de Gringo Bros invitando a tomar clases de inglés" width="1640" height="720" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 · EQUIPO -->
+  <section class="slide s-dark" id="equipo" aria-label="Equipo">
+    <div class="slide__in stack">
+      <header class="head">
+        <p class="eyebrow eyebrow--orange">03 · El equipo</p>
+        <h2 class="h2">Los <em>Bros</em> detrás de tus clases</h2>
+      </header>
+      <div class="team">
+        <!-- Para poner foto: reemplaza <span class="avatar">EB</span> por <img class="avatar" src="assets/img/elias.jpg" alt="Elias Burgos"> -->
+        <article class="member">
+          <span class="avatar">EB</span>
+          <h3>Elias Burgos</h3>
+          <p>Docente de inglés</p>
+        </article>
+        <article class="member">
+          <span class="avatar">JB</span>
+          <h3>Jesus Burgos</h3>
+          <p>Docente de inglés</p>
+        </article>
+        <article class="member">
+          <span class="avatar">AS</span>
+          <h3>Alejandro Suarez</h3>
+          <p>Docente de inglés</p>
+        </article>
+      </div>
+      <ul class="creds">
+        <li><b>Licenciados en Inglés</b></li>
+        <li><b>Licenciados en Educación Superior y Tecnología</b></li>
+        <li><b>+10 años</b> de experiencia docente</li>
+        <li>Experiencia en <b>CBA</b> y <b>CENACE UPSA</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 · MODALIDADES -->
+  <section class="slide s-orange" id="modalidades" aria-label="Modalidades">
+    <div class="slide__in stack">
+      <header class="head">
+        <p class="eyebrow eyebrow--dark">04 · Modalidades</p>
+        <h2 class="h2">Clases <em>adaptadas</em> a tus necesidades</h2>
+      </header>
+      <ul class="modes">
+        <li><span class="ic"><img src="assets/img/ic-1on1.png" alt="" loading="lazy"></span><b>Clases privadas 1 on 1</b><span>Solo tú y tu profe, a tu ritmo.</span></li>
+        <li><span class="ic"><img src="assets/img/ic-grupales.png" alt="" loading="lazy"></span><b>Clases grupales</b><span>Inglés general en grupos reducidos.</span></li>
+        <li><span class="ic"><img src="assets/img/ic-niveles.png" alt="" loading="lazy"></span><b>Todos los niveles</b><span>Desde cero hasta avanzado.</span></li>
+        <li><span class="ic"><img src="assets/img/ic-tutorias.png" alt="" loading="lazy"></span><b>Tutorías</b><span>Apoyo puntual en lo que más te cuesta.</span></li>
+        <li><span class="ic"><img src="assets/img/ic-objetivos.png" alt="" loading="lazy"></span><b>Módulos por objetivos</b><span>Trabajo, viajes, negocios o exámenes.</span></li>
+      </ul>
+      <div class="hybrid">
+        <div><span class="tag">Presencial</span><p>En Santa Cruz de la Sierra, Bolivia.</p></div>
+        <div><span class="tag tag--ink">Virtual</span><p>En vivo por Google Meet, desde cualquier país.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · CURSOS -->
+  <section class="slide s-light" id="cursos" aria-label="Cursos">
+    <div class="slide__in stack">
+      <header class="head">
+        <p class="eyebrow">05 · Cursos</p>
+        <h2 class="h2">Elige tu <em>plan</em></h2>
+        <p class="note">Precios en dólares (USD) · Pago por Binance o PayPal</p>
+      </header>
+      <div class="plans">
+        <article class="plan">
+          <span class="plan__tag">Intensivo</span>
+          <h3>Test Preparation</h3>
+          <p class="plan__price" data-price="test"></p>
+          <ul>
+            <li><b>1 semana</b></li>
+            <li>1 h 30 min por día</li>
+            <li>Lunes a viernes</li>
+            <li>Ideal para un examen o entrevista cercana</li>
+          </ul>
+          <a class="btn btn--ink btn--sm" data-wa="Hola Gringo Bros, quiero información del curso Test Preparation" href="#">Quiero este</a>
+        </article>
+        <article class="plan">
+          <span class="plan__tag">Grupal o 1 on 1</span>
+          <h3>Inglés General</h3>
+          <p class="plan__price" data-price="general"></p>
+          <ul>
+            <li><b>2 meses</b></li>
+            <li>8 horas por semana</li>
+            <li>Lunes a viernes</li>
+            <li>Speaking, listening, gramática y vocabulario</li>
+          </ul>
+          <a class="btn btn--ink btn--sm" data-wa="Hola Gringo Bros, quiero información del curso de Inglés General" href="#">Quiero este</a>
+        </article>
+        <article class="plan">
+          <span class="plan__tag plan__tag--orange">Incluye simulacros</span>
+          <h3>TOEFL Preparation</h3>
+          <p class="plan__price" data-price="toefl"></p>
+          <ul>
+            <li><b>2 meses</b></li>
+            <li>8 horas por semana</li>
+            <li>Lunes a viernes</li>
+            <li><b>+ Simulacros de TOEFL</b></li>
+          </ul>
+          <a class="btn btn--ink btn--sm" data-wa="Hola Gringo Bros, quiero información del curso TOEFL Preparation" href="#">Quiero este</a>
+        </article>
+        <article class="plan plan--custom">
+          <span class="plan__tag plan__tag--white">Recomendado</span>
+          <h3>Paquete Personalizado</h3>
+          <p class="plan__price">A tu medida</p>
+          <ul>
+            <li>Tú eliges los días y horarios</li>
+            <li>Ritmo según tu disponibilidad</li>
+            <li>Enfocado en <b>tu objetivo</b></li>
+            <li>1 on 1 o en grupo</li>
+          </ul>
+          <a class="btn btn--white btn--sm" data-wa="Hola Gringo Bros, quiero armar un paquete personalizado de inglés" href="#">Armar mi plan por WhatsApp</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · TOEFL -->
+  <section class="slide s-dark" id="toefl" aria-label="Preparación TOEFL">
+    <div class="slide__in split split--rev">
+      <div>
+        <p class="eyebrow eyebrow--orange">06 · Preparación TOEFL</p>
+        <h2 class="h2">Llega al examen <em>sabiendo</em> lo que te espera</h2>
+        <p class="lead">Practicamos las cuatro secciones del TOEFL con estrategias concretas y <b>simulacros en condiciones de examen</b>, para que el día de la prueba nada te tome por sorpresa.</p>
+        <ul class="checks">
+          <li>Simulacros de TOEFL con retroalimentación</li>
+          <li>Estrategias y manejo del tiempo por sección</li>
+          <li>Corrección personalizada de speaking y writing</li>
+          <li>Plan de estudio según el puntaje que necesitas</li>
+        </ul>
+        <a class="btn btn--orange" data-wa="Hola Gringo Bros, quiero prepararme para el TOEFL" href="#">Quiero prepararme para el TOEFL</a>
+      </div>
+      <div class="skills" aria-label="Secciones del TOEFL">
+        <div class="skill"><b>R</b><span>Reading</span></div>
+        <div class="skill"><b>L</b><span>Listening</span></div>
+        <div class="skill"><b>S</b><span>Speaking</span></div>
+        <div class="skill"><b>W</b><span>Writing</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · CÓMO EMPEZAR -->
+  <section class="slide s-orange" id="empezar" aria-label="Cómo empezar">
+    <div class="slide__in stack">
+      <header class="head">
+        <p class="eyebrow eyebrow--dark">07 · Cómo empezar</p>
+        <h2 class="h2">Tu primer paso, <em>sin compromiso</em></h2>
+      </header>
+      <ol class="steps">
+        <li><b>Escríbenos</b><span>Mándanos un WhatsApp y cuéntanos qué quieres lograr con el inglés.</span></li>
+        <li><b>Reunión informativa gratis</b><span>Conversamos por videollamada: te explicamos el programa y nuestra metodología.</span></li>
+        <li><b>Prueba de nivel</b><span>Vemos desde dónde partes para no repetir lo que ya sabes.</span></li>
+        <li><b>Arrancas tu plan</b><span>Elegimos juntos la modalidad, los días y el horario.</span></li>
+      </ol>
+      <div class="facts">
+        <p><b>Horarios:</b> flexibles, coordinados en hora GMT-4 (Bolivia).</p>
+        <p><b>Pagos:</b> en USD por Binance o PayPal.</p>
+      </div>
+      <a class="btn btn--ink" data-wa="Hola Gringo Bros, quiero agendar la reunión informativa gratis" href="#">Agendar mi reunión gratis</a>
+    </div>
+  </section>
+
+  <!-- 08 · TESTIMONIOS -->
+  <section class="slide s-light" id="testimonios" aria-label="Testimonios">
+    <div class="slide__in stack">
+      <header class="head">
+        <p class="eyebrow">08 · Testimonios</p>
+        <h2 class="h2">Lo que dicen nuestros <em>alumnos</em></h2>
+      </header>
+      <!--
+        TESTIMONIOS DE EJEMPLO: reemplazar por testimonios reales (nombre + qué estudió + frase).
+        Cuando estén todos reemplazados, borra las etiquetas <span class="demo">Ejemplo</span>.
+      -->
+      <div class="quotes">
+        <figure class="quote">
+          <span class="demo">Ejemplo</span>
+          <blockquote>“Siempre entendía todo pero me trababa al hablar. En las clases 1 on 1 perdí el miedo y ahora hago mis reuniones de trabajo en inglés.”</blockquote>
+          <figcaption><b>Nombre del alumno</b><span>Clases 1 on 1</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="demo">Ejemplo</span>
+          <blockquote>“Los simulacros fueron clave. Llegué al TOEFL sabiendo exactamente cómo manejar el tiempo en cada sección.”</blockquote>
+          <figcaption><b>Nombre del alumno</b><span>TOEFL Preparation</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <span class="demo">Ejemplo</span>
+          <blockquote>“Tomo las clases por Meet desde otro país y los horarios se adaptan a mí. Los profes son muy pacientes y dinámicos.”</blockquote>
+          <figcaption><b>Nombre del alumno</b><span>Inglés General</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 · CONTACTO -->
+  <section class="slide s-hero" id="contacto" aria-label="Contacto y preguntas frecuentes">
+    <div class="slide__in split">
+      <div>
+        <p class="eyebrow eyebrow--dark">09 · Contacto</p>
+        <h2 class="h2 h2--big"><span class="marker">¿Listo para hablar inglés?</span></h2>
+        <a class="wa-big" data-wa href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+          <span><small>WhatsApp</small>+591 636 25636</span>
+        </a>
+        <ul class="contact">
+          <li><a href="mailto:gringobros@outlook.com">gringobros@outlook.com</a></li>
+        </ul>
+        <ul class="social" aria-label="Redes sociales">
+          <li><a href="https://www.instagram.com/gringo.bros/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+            <span>Instagram</span></a></li>
+          <li><a href="https://www.tiktok.com/@gringobros" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.6a2.9 2.9 0 1 1-2-2.7V9.4a6.3 6.3 0 1 0 5.4 6.2V8.7a8.2 8.2 0 0 0 4.8 1.5V6.8a4.8 4.8 0 0 1-1-.1z"/></svg>
+            <span>TikTok</span></a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61587328555304" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>
+            <span>Facebook</span></a></li>
+        </ul>
+      </div>
+      <div class="faq">
+        <h3 class="faq__title">Preguntas frecuentes</h3>
+        <details>
+          <summary>¿Necesito saber inglés para empezar?</summary>
+          <p>No. Hacemos una prueba de nivel y armamos tu plan desde donde estés, incluso si empiezas desde cero.</p>
+        </details>
+        <details>
+          <summary>¿Las clases son presenciales o virtuales?</summary>
+          <p>Las dos. Presenciales en Santa Cruz de la Sierra, o virtuales y en vivo por Google Meet desde cualquier lugar.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se paga?</summary>
+          <p>Los precios son en dólares (USD) y puedes pagar por Binance o PayPal.</p>
+        </details>
+        <details>
+          <summary>¿Puedo elegir mis horarios?</summary>
+          <p>Sí. Con el paquete personalizado eliges días, horarios y ritmo según tu disponibilidad.</p>
+        </details>
+        <details>
+          <summary>¿Qué incluye la preparación TOEFL?</summary>
+          <p>Dos meses de clases (8 horas por semana) trabajando reading, listening, speaking y writing, más simulacros de TOEFL.</p>
+        </details>
+        <details>
+          <summary>¿Puedo conocer el programa antes de pagar?</summary>
+          <p>Claro. Agenda una reunión informativa gratis por WhatsApp y te explicamos el programa y la metodología.</p>
+        </details>
+      </div>
+    </div>
+    <footer class="foot">© <span id="year">2026</span> Gringo Bros · Inglés a tu manera</footer>
+  </section>
+
+</main>
+
+<!-- ===== Cinta inferior + navegación ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Inglés a tu manera</span><i>✦</i><span>Preparación TOEFL</span><i>✦</i><span>Clases 1 on 1</span><i>✦</i><span>Clases grupales</span><i>✦</i><span>Presencial o por Google Meet</span><i>✦</i><span>+10 años de experiencia</span><i>✦</i>
+    <span>Inglés a tu manera</span><i>✦</i><span>Preparación TOEFL</span><i>✦</i><span>Clases 1 on 1</span><i>✦</i><span>Clases grupales</span><i>✦</i><span>Presencial o por Google Meet</span><i>✦</i><span>+10 años de experiencia</span><i>✦</i>
+  </div>
+</div>
+<div class="navbar">
+  <span class="navbar__label" id="slideLabel">Inicio</span>
+  <div class="navbar__arrows">
+    <button class="arrow" id="prev" aria-label="Sección anterior">←</button>
+    <button class="arrow" id="next" aria-label="Sección siguiente">→</button>
+  </div>
+</div>
+
+<a class="wa-float" data-wa href="#" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
