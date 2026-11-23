@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gringo Bros · Inglés a tu manera</title>
-  <meta name="description" content="Clases de inglés personalizadas 1 on 1, grupales y preparación TOEFL. Presenciales en Santa Cruz, Bolivia o virtuales por Google Meet. Docentes licenciados con más de 10 años de experiencia.">
+  <meta name="description" content="Clases de inglés personalizadas 1 on 1, grupales y preparación de exámenes de certificación (TOEFL, TOEIC, Duolingo English Test, IELTS). Presenciales en Santa Cruz, Bolivia o virtuales por Google Meet. Docentes licenciados con más de 10 años de experiencia.">
   <meta name="theme-color" content="#EC6B0E">
   <meta property="og:title" content="Gringo Bros · Inglés a tu manera">
-  <meta property="og:description" content="Clases 1 on 1, grupales y preparación TOEFL. Presencial en Santa Cruz o virtual por Google Meet.">
+  <meta property="og:description" content="Clases 1 on 1, grupales y preparación de exámenes de certificación: TOEFL, TOEIC, Duolingo English Test e IELTS. Presencial en Santa Cruz o virtual por Google Meet.">
   <meta property="og:image" content="assets/img/portada.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/img/favicon.png?v=2">
@@ -58,7 +58,11 @@
           <span class="marker">Te ayudamos<br>a abrir esas puertas</span>
           <small>(que tanto te prometieron)</small>
         </h1>
-        <p class="hero__lead">Clases de inglés <b>1 on 1</b>, <b>grupales</b> y <b>preparación TOEFL</b>. Presenciales en Santa Cruz o virtuales por Google Meet: <b>llevamos el inglés hasta tu casa.</b></p>
+        <ul class="hero__list">
+          <li>Clases de inglés <b>1 on 1</b></li>
+          <li><b>Preparación de exámenes para certificación (TOEFL, TOEIC, Duolingo English Test, IELTS)</b></li>
+          <li>Presenciales en Santa Cruz o virtuales por Google Meet: <b>llevamos el inglés hasta tu casa.</b></li>
+        </ul>
         <div class="hero__cta">
           <a class="btn btn--ink" data-wa href="#">Escríbenos por WhatsApp</a>
           <a class="btn btn--ghost" href="#cursos" data-go="4">Ver cursos</a>
@@ -70,7 +74,7 @@
         </ul>
       </div>
       <div class="hero__art" aria-hidden="true">
-        <span class="sticker sticker--ink">TOEFL prep</span>
+        <span class="sticker sticker--ink">Certificaciones</span>
         <span class="sticker sticker--white">Clases 1 on 1</span>
         <img class="hero__logo" src="assets/img/logo-blanco.png" alt="" width="900" height="468">
         <p class="hero__slogan">Inglés a tu manera</p>
@@ -81,8 +85,8 @@
   <!-- Cinta -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker__track">
-      <span>Inglés a tu manera</span><i>✦</i><span>Preparación TOEFL</span><i>✦</i><span>Clases 1 on 1</span><i>✦</i><span>Clases grupales</span><i>✦</i><span>Presencial o por Google Meet</span><i>✦</i><span>+10 años de experiencia</span><i>✦</i>
-      <span>Inglés a tu manera</span><i>✦</i><span>Preparación TOEFL</span><i>✦</i><span>Clases 1 on 1</span><i>✦</i><span>Clases grupales</span><i>✦</i><span>Presencial o por Google Meet</span><i>✦</i><span>+10 años de experiencia</span><i>✦</i>
+      <span>Inglés a tu manera</span><i>✦</i><span>Exámenes de certificación</span><i>✦</i><span>Clases 1 on 1</span><i>✦</i><span>Clases grupales</span><i>✦</i><span>Presencial o por Google Meet</span><i>✦</i><span>+10 años de experiencia</span><i>✦</i>
+      <span>Inglés a tu manera</span><i>✦</i><span>Exámenes de certificación</span><i>✦</i><span>Clases 1 on 1</span><i>✦</i><span>Clases grupales</span><i>✦</i><span>Presencial o por Google Meet</span><i>✦</i><span>+10 años de experiencia</span><i>✦</i>
     </div>
   </div>
 
@@ -114,29 +118,59 @@
         <p class="eyebrow eyebrow--orange">03 · El equipo</p>
         <h2 class="h2">Los <em>Bros</em> detrás de tus clases</h2>
       </header>
+      <p class="team__hint">Toca la foto de cada profe para conocerlo 👆</p>
       <div class="team">
-        <!-- Para poner foto: reemplaza <span class="avatar">EB</span> por <img class="avatar" src="assets/img/elias.jpg" alt="Elias Burgos"> -->
         <article class="member">
-          <span class="avatar">EB</span>
+          <button class="member__photo" type="button" aria-expanded="false" aria-controls="pop-elias" aria-label="Conoce a Elias Burgos">
+            <img class="avatar" src="assets/img/elias.jpg" alt="Elias Burgos" width="480" height="480" loading="lazy">
+            <span class="member__plus" aria-hidden="true">+</span>
+          </button>
           <h3>Elias Burgos</h3>
           <p>Docente de inglés</p>
+          <div class="member__pop" id="pop-elias" role="dialog" aria-label="Elias Burgos" hidden>
+            <button class="member__close" type="button" aria-label="Cerrar">×</button>
+            <p class="member__label">Mi motivación</p>
+            <p>Me encanta ver la cara de alguien cuando por fin se suelta a hablar en inglés sin miedo. ¡Ese momento vale todo!</p>
+            <p class="member__label">Mi propósito</p>
+            <p>Mi misión es mejorar las oportunidades de mis estudiantes y guiarlos para que tengan los mejores resultados en las metas que se propongan.</p>
+          </div>
         </article>
         <article class="member">
-          <span class="avatar">JB</span>
+          <button class="member__photo" type="button" aria-expanded="false" aria-controls="pop-jesus" aria-label="Conoce a Jesus Burgos">
+            <img class="avatar" src="assets/img/jesus.jpg" alt="Jesus Burgos" width="480" height="480" loading="lazy">
+            <span class="member__plus" aria-hidden="true">+</span>
+          </button>
           <h3>Jesus Burgos</h3>
           <p>Docente de inglés</p>
+          <div class="member__pop" id="pop-jesus" role="dialog" aria-label="Jesus Burgos" hidden>
+            <button class="member__close" type="button" aria-label="Cerrar">×</button>
+            <p class="member__label">Mi motivación</p>
+            <p>Creo que el inglés se aprende hablando, no memorizando. Por eso mis clases son relajadas y equivocarse está más que permitido.</p>
+            <p class="member__label">Mi propósito</p>
+            <p>Que salgas de cada clase usando algo nuevo en tu día a día, no solo con apuntes en el cuaderno.</p>
+          </div>
         </article>
         <article class="member">
-          <span class="avatar">AS</span>
+          <button class="member__photo" type="button" aria-expanded="false" aria-controls="pop-alejandro" aria-label="Conoce a Alejandro Suarez">
+            <img class="avatar" src="assets/img/alejandro.jpg" alt="Alejandro Suarez" width="480" height="480" loading="lazy">
+            <span class="member__plus" aria-hidden="true">+</span>
+          </button>
           <h3>Alejandro Suarez</h3>
           <p>Docente de inglés</p>
+          <div class="member__pop" id="pop-alejandro" role="dialog" aria-label="Alejandro Suarez" hidden>
+            <button class="member__close" type="button" aria-label="Cerrar">×</button>
+            <p class="member__label">Mi motivación</p>
+            <p>El inglés te abre puertas que ni te imaginas, y me motiva un montón acompañar a alguien a cruzarlas.</p>
+            <p class="member__label">Mi propósito</p>
+            <p>Armar contigo un plan a tu medida y acompañarte paso a paso hasta ese examen, ese trabajo o ese viaje que tienes en mente.</p>
+          </div>
         </article>
       </div>
       <ul class="creds">
         <li><b>Licenciados en Inglés</b></li>
         <li><b>Licenciados en Educación Superior y Tecnología</b></li>
         <li><b>+10 años</b> de experiencia docente</li>
-        <li>Experiencia en <b>CBA</b> y <b>CENACE UPSA</b></li>
+        <li>Experiencia en <b>institutos de inglés de alto prestigio</b> a nivel nacional</li>
       </ul>
     </div>
   </section>
@@ -149,11 +183,11 @@
         <h2 class="h2">Clases <em>adaptadas</em> a tus necesidades</h2>
       </header>
       <ul class="modes">
-        <li><span class="ic"><img src="assets/img/ic-1on1.png" alt="" loading="lazy"></span><b>Clases privadas 1 on 1</b><span>Solo tú y tu profe, a tu ritmo.</span></li>
-        <li><span class="ic"><img src="assets/img/ic-grupales.png" alt="" loading="lazy"></span><b>Clases grupales</b><span>Inglés general en grupos reducidos.</span></li>
-        <li><span class="ic"><img src="assets/img/ic-niveles.png" alt="" loading="lazy"></span><b>Todos los niveles</b><span>Desde cero hasta avanzado.</span></li>
-        <li><span class="ic"><img src="assets/img/ic-tutorias.png" alt="" loading="lazy"></span><b>Tutorías</b><span>Apoyo puntual en lo que más te cuesta.</span></li>
-        <li><span class="ic"><img src="assets/img/ic-objetivos.png" alt="" loading="lazy"></span><b>Módulos por objetivos</b><span>Trabajo, viajes, negocios o exámenes.</span></li>
+        <li><a class="mode" data-wa="Estoy interesado en las clases 1 on 1, dame más información." href="#"><span class="ic"><img src="assets/img/ic-1on1.png" alt="" loading="lazy"></span><b>Clases privadas 1 on 1</b><span class="mode__txt">Solo tú y tu profe, a tu ritmo.</span><span class="mode__cta">Pedir info →</span></a></li>
+        <li><a class="mode" data-wa="Estoy interesado en las clases grupales, dame más información." href="#"><span class="ic"><img src="assets/img/ic-grupales.png" alt="" loading="lazy"></span><b>Clases grupales</b><span class="mode__txt">Inglés general en grupos reducidos.</span><span class="mode__cta">Pedir info →</span></a></li>
+        <li><a class="mode" data-wa="Estoy interesado en clases de inglés para mi nivel, dame más información." href="#"><span class="ic"><img src="assets/img/ic-niveles.png" alt="" loading="lazy"></span><b>Todos los niveles</b><span class="mode__txt">Desde cero hasta avanzado.</span><span class="mode__cta">Pedir info →</span></a></li>
+        <li><a class="mode" data-wa="Estoy interesado en la preparación de exámenes de certificación (TOEFL, TOEIC, Duolingo English Test, IELTS), dame más información." href="#"><span class="ic"><img src="assets/img/ic-tutorias.png" alt="" loading="lazy"></span><b>Exámenes de certificación</b><span class="mode__txt">TOEFL, TOEIC, Duolingo English Test e IELTS.</span><span class="mode__cta">Pedir info →</span></a></li>
+        <li><a class="mode" data-wa="Estoy interesado en ESP (English for Specific Purposes), dame más información." href="#"><span class="ic"><img src="assets/img/ic-objetivos.png" alt="" loading="lazy"></span><b>ESP (English for Specific Purposes)</b><span class="mode__txt">Inglés enfocado en tu profesión o área de trabajo.</span><span class="mode__cta">Pedir info →</span></a></li>
       </ul>
       <div class="hybrid">
         <div><span class="tag">Presencial</span><p>En Santa Cruz de la Sierra, Bolivia.</p></div>

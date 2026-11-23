@@ -78,6 +78,32 @@ const ro = new IntersectionObserver((entries) => {
 }, { rootMargin: "0px 0px -8% 0px" });
 revealEls.forEach((el) => ro.observe(el));
 
+/* ---------- Equipo: tarjeta de motivación y propósito ---------- */
+const memberBtns = [...document.querySelectorAll(".member__photo")];
+function closePops(except) {
+  memberBtns.forEach((b) => {
+    if (b === except) return;
+    b.setAttribute("aria-expanded", "false");
+    document.getElementById(b.getAttribute("aria-controls")).hidden = true;
+    b.closest(".member").classList.remove("is-open");
+  });
+}
+memberBtns.forEach((b) => {
+  const pop = document.getElementById(b.getAttribute("aria-controls"));
+  b.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = pop.hidden;
+    closePops(b);
+    pop.hidden = !open;
+    b.setAttribute("aria-expanded", String(open));
+    b.closest(".member").classList.toggle("is-open", open);
+  });
+  pop.addEventListener("click", (e) => e.stopPropagation());
+  pop.querySelector(".member__close").addEventListener("click", () => { closePops(); b.focus(); });
+});
+document.addEventListener("click", () => closePops());
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePops(); });
+
 /* ---------- Menú ---------- */
 function openMenu() { menu.hidden = false; menuBtn.setAttribute("aria-expanded", "true"); menu.querySelector("a").focus(); }
 function closeMenu() { if (menu.hidden) return; menu.hidden = true; menuBtn.setAttribute("aria-expanded", "false"); }
