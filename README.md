@@ -15,7 +15,7 @@ Sitio estático (HTML + CSS + JS, sin dependencias). Se publica gratis con GitHu
 | Precios (USD) | `assets/js/main.js` → `CONFIG.precios` (vacío = "Consultar precio") |
 | Número / mensaje de WhatsApp | `assets/js/main.js` → `CONFIG.whatsapp`, `CONFIG.mensajeWhatsApp` |
 | Fotos de los profes | `index.html`, sección `#equipo` (instrucción en el comentario) |
-| Testimonios | `index.html`, sección `#testimonios` — reemplazar los de ejemplo por reales y borrar la etiqueta "Ejemplo" |
+| Testimonios | `index.html`, sección `#testimonios` |
 | Colores | `assets/css/styles.css` → bloque `:root` |
 
 ## Identidad visual usada
